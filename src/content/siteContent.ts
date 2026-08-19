@@ -44,27 +44,35 @@ export const scenarios: Scenario[] = [
   },
 ];
 
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 const createScenarioVideos = (folder: string): VideoItem[] => [
   {
     id: "forest-composition",
     title: "Forest composition",
     caption:
       "Main scenario animation showing forest composition changes from 2020 to 2099.",
-    src: `/videos/${folder}/forest_composition_SSP2_90pct_2020_2099_matplotlib.mp4`,
+    src: publicAsset(
+      `videos/${folder}/forest_composition_SSP2_90pct_2020_2099_matplotlib.mp4`,
+    ),
   },
   {
     id: "forest-precipitation-volumes",
     title: "Forest precipitation volumes",
     caption:
       "Main scenario animation showing precipitation-related freshwater volumes over time.",
-    src: `/videos/${folder}/forest_precipitation_volumes_SSP2_90pct_2020_2099_matplotlib.mp4`,
+    src: publicAsset(
+      `videos/${folder}/forest_precipitation_volumes_SSP2_90pct_2020_2099_matplotlib.mp4`,
+    ),
   },
   {
     id: "cumulative-freshwater-change",
     title: "Cumulative freshwater change",
     caption:
       "Main scenario animation showing cumulative freshwater change relative to the baseline.",
-    src: `/videos/${folder}/difference_cumulative_freshwater_change_SSP2_90pct_minus_SSP2_BAU_2020_2099_matplotlib.mp4`,
+    src: publicAsset(
+      `videos/${folder}/difference_cumulative_freshwater_change_SSP2_90pct_minus_SSP2_BAU_2020_2099_matplotlib.mp4`,
+    ),
   },
 ];
 
