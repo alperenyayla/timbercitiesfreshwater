@@ -16,6 +16,12 @@ npm run dev
 npm run build
 ```
 
+## Deployment
+
+This repository is configured for GitHub Pages through GitHub Actions. In the
+repository settings, set Pages source to `GitHub Actions`; the workflow will
+build the Vite app and publish the `dist` folder.
+
 ## Video assets
 
 Place article animation files in scenario folders inside `public/videos`.
