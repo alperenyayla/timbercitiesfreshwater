@@ -11,6 +11,26 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const basePath = "/timbercitiesfreshwater/";
+      const isPublishedPath = location.pathname.startsWith(basePath);
+
+      if (!isPublishedPath) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "/src/main.tsx";
+        document.body.appendChild(script);
+      } else {
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = `${basePath}assets/app.css`;
+        document.head.appendChild(stylesheet);
+
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = `${basePath}assets/app.js`;
+        document.body.appendChild(script);
+      }
+    </script>
   </body>
 </html>

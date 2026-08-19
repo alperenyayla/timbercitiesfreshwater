@@ -18,9 +18,19 @@ npm run build
 
 ## Deployment
 
-This repository is configured for GitHub Pages through GitHub Actions. In the
-repository settings, set Pages source to `GitHub Actions`; the workflow will
-build the Vite app and publish the `dist` folder.
+This repository supports two GitHub Pages publishing modes.
+
+For GitHub Actions Pages, set Pages source to `GitHub Actions`; the workflow
+will build the Vite app and publish the `dist` folder.
+
+For branch-root Pages, run this before committing:
+
+```bash
+npm run build:pages-root
+```
+
+That command updates the root `assets` and `videos` folders used by GitHub
+Pages when it publishes directly from the `main` branch root.
 
 ## Video assets
 
